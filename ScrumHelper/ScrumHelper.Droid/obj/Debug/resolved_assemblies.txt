@@ -1,1 +1,0 @@
-C:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Droid\bin\Debug\ScrumHelper.Droid.dll
