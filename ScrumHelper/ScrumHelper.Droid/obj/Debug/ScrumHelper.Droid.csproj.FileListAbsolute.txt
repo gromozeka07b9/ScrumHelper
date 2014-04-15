@@ -1,0 +1,13 @@
+C:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Droid\bin\Debug\ScrumHelper.Droid.dll
+C:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Droid\bin\Debug\ScrumHelper.Droid.pdb
+C:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Droid\bin\Debug\ScrumHelper.Droid.dll.mdb
+C:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Droid\bin\Debug\ScrumHelper.Droid.apk
+C:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Droid\bin\Debug\ScrumHelper.Droid-Signed.apk
+C:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Droid\obj\Debug\ScrumHelper.Droid.dll
+C:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Droid\obj\Debug\ScrumHelper.Droid.pdb
+C:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Droid\obj\Debug\android\bin\ScrumHelper.Droid.apk
+C:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Droid\obj\Debug\res\layout\main.xml
+C:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Droid\obj\Debug\res\values\strings.xml
+C:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Droid\obj\Debug\res\drawable\icon.png
+C:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Droid\obj\Debug\R.cs.flag
+C:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Droid\obj\Debug\uploadflags.txt

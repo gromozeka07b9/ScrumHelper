@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrumHelper.Core", "ScrumHelper.Core\ScrumHelper.Core.csproj", "{0774636A-DE89-4A16-BA27-118CEE772871}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrumHelper.Droid", "ScrumHelper.Droid\ScrumHelper.Droid.csproj", "{BD329F76-0D82-49BE-933F-F09C1FE3B1A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0774636A-DE89-4A16-BA27-118CEE772871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0774636A-DE89-4A16-BA27-118CEE772871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0774636A-DE89-4A16-BA27-118CEE772871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0774636A-DE89-4A16-BA27-118CEE772871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD329F76-0D82-49BE-933F-F09C1FE3B1A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD329F76-0D82-49BE-933F-F09C1FE3B1A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD329F76-0D82-49BE-933F-F09C1FE3B1A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD329F76-0D82-49BE-933F-F09C1FE3B1A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = ScrumHelper.Droid\ScrumHelper.Droid.csproj
+	EndGlobalSection
+EndGlobal
