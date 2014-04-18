@@ -1,12 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ScrumHelper.Droid\MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ScrumHelper.Core/BusinessLayer/Project.cs">
     <Files>
-      <File FileName="ScrumHelper.Droid\MainActivity.cs" Line="30" Column="58" />
-      <File FileName="ScrumHelper.Droid\Resources\AboutResources.txt" Line="1" Column="1" />
-      <File FileName="ScrumHelper.Droid\Resources\Resource.designer.cs" Line="1" Column="1" />
-      <File FileName="ScrumHelper.Droid\Resources\values\Strings.xml" Line="1" Column="1" />
-      <File FileName="c:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Core\BusinessLayer\Managers\ProjectManager.cs" Line="1" Column="1" />
+      <File FileName="ScrumHelper.Core/BusinessLayer/Project.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -17,5 +13,5 @@
     <Watch file="ScrumHelper.Core\DataAccessLayer\Repository.cs" line="64" offsetX="526" offsetY="1449" expression="ScrumHelper.BL.Project" liveUpdate="False" />
     <Watch file="c:\xamarin\ScrumHelper\ScrumHelper\ScrumHelper.Core\DataLayer\SQLite.cs" line="1561" offsetX="986" offsetY="35880" expression="expr" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.ScrumHelper.Droid AndroidDeviceId-Debug="0123456789ABCDEF" MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" />
+  <MonoDevelop.Ide.ItemProperties.ScrumHelper.Droid MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" />
 </Properties>

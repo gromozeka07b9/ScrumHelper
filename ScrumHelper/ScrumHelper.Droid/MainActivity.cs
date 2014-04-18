@@ -13,15 +13,25 @@ namespace ScrumHelper.Droid
 	[Activity (Label = "ScrumHelper.Droid", MainLauncher = true)]
 	public class MainActivity : Activity
 	{
-		int count = 1;
+
+
+        //int count = 1;
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-
+            var ExistsProjects = ScrumHelper.BL.Managers.ProjectManager.GetProjects();
+            if (ExistsProjects.Count > 0)
+                SetActiveLayoutProjects();
+            else
+            {
+                CreateDefaultData();
+                SetActiveLayoutFirstStart();
+            }
 			// Set our view from the "main" layout resource
-			SetContentView (Resource.Layout.Main);
-
+            //SetContentView (Resource.Layout.Main);
+                //SetContentView (Resource.Layout.FirstStart);
+            /*
 			// Get our button from the layout resource,
 			// and attach an event to it
 			Button button = FindViewById<Button> (Resource.Id.myButton);
@@ -42,13 +52,35 @@ namespace ScrumHelper.Droid
 				//items.Add (item.Name);
 			}
 			lv.Adapter = new ArrayAdapter<string> (this, Android.Resource.Layout.SimpleListItem1, items);
-			//lv.Adapter = ListAdapter;
+            //lv.Adapter = ListAdapter;*/
 		}
+            
 		protected override void OnResume()
 		{
 			base.OnResume ();
 
 		}
+
+        bool FirstStartApp()
+        {
+            return true;
+        }
+
+        void SetActiveLayoutProjects()
+        {
+            SetContentView (Resource.Layout.Main);
+        }
+
+        void SetActiveLayoutFirstStart()
+        {
+            SetContentView (Resource.Layout.FirstStart);
+        }
+
+        void CreateDefaultData()
+        {
+            Project prj = new Project(){Name = "Ваш демо-проект"};
+            ScrumHelper.BL.Managers.ProjectManager.SaveProject(prj);
+        }
 	}
 }
 
