@@ -11,12 +11,12 @@
     <RootNamespace>ScrumHelper.Droid</RootNamespace>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <AssemblyName>ScrumHelper.Droid</AssemblyName>
-    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -83,6 +83,8 @@
     <Compile Include="..\ScrumHelper.Core\BusinessLayer\Project.cs">
       <Link>BusinessLayer\Project.cs</Link>
     </Compile>
+    <Compile Include="Adapters\ListProjectsAdapter.cs" />
+    <Compile Include="EditProjectActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -93,7 +95,7 @@
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
-    <AndroidResource Include="Resources\layout\FirstStart.axml" />
+    <AndroidResource Include="Resources\layout\EditProject.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -102,6 +104,7 @@
     <Folder Include="BusinessLayer\Managers\" />
     <Folder Include="DataAccessLayer\" />
     <Folder Include="DataLayer\" />
+    <Folder Include="Adapters\" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

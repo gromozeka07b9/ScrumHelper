@@ -1,0 +1,5 @@
+<ListOfTask>
+  <Task file="" description="В ORM добавить класс для доступа к объектам через Generic (http://habrahabr.ru/post/194404/)" priority="Low" />
+  <Task file="" description="Разбить экраны на Activity" />
+  <Task file="" description="Вывод в списки сделать через адаптеры (http://docs.xamarin.com/recipes/android/data/adapters/create_a_custom_adapter_for_contacts/)" />
+</ListOfTask>

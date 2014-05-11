@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace ScrumHelper.Droid
 {
-	[Activity (Label = "ScrumHelper.Droid", MainLauncher = true)]
+	[Activity (Label = "ScrumHelper", MainLauncher = true)]
 	public class MainActivity : Activity
 	{
 
@@ -21,38 +21,26 @@ namespace ScrumHelper.Droid
 		{
 			base.OnCreate (bundle);
             var ExistsProjects = ScrumHelper.BL.Managers.ProjectManager.GetProjects();
-            if (ExistsProjects.Count > 0)
-                SetActiveLayoutProjects();
-            else
+            if (ExistsProjects.Count < 1)
             {
                 CreateDefaultData();
-                SetActiveLayoutFirstStart();
+                ExistsProjects = ScrumHelper.BL.Managers.ProjectManager.GetProjects();
             }
-			// Set our view from the "main" layout resource
-            //SetContentView (Resource.Layout.Main);
-                //SetContentView (Resource.Layout.FirstStart);
-            /*
-			// Get our button from the layout resource,
-			// and attach an event to it
-			Button button = FindViewById<Button> (Resource.Id.myButton);
-			
-			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", count++);
-				Project prj = new Project(){Name = "test1"};
-				ScrumHelper.BL.Managers.ProjectManager.SaveProject(prj);
-				var result = ScrumHelper.BL.Managers.ProjectManager.DeleteProject(prj.ID);
-			};
+            var ListProjectsStrings = new List<string>();
+            foreach (var item in ExistsProjects)
+            {
+                ListProjectsStrings.Add(item.Name);
+            }
+            SetContentView (Resource.Layout.Main);
+            Button editProjectButton = FindViewById<Button>(Resource.Id.editProjectButton);
+            editProjectButton.Click += delegate
+            {
+                //SetContentView (Resource.Layout.EditProject);
+                StartActivity(typeof(EditProjectActivity));
+            };
+            ListView lv = FindViewById<ListView> (Resource.Id.listProjects);
+            lv.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, ListProjectsStrings.ToArray());
 
-			var prj1 = ScrumHelper.BL.Managers.ProjectManager.GetProjects ();
-			ListView lv = FindViewById<ListView> (Resource.Id.listView1);
-			string[] items = new string[]{ "test", "test2" };
-			JavaList items2 = new JavaList();
-			foreach (var item in prj1) 
-			{
-				//items.Add (item.Name);
-			}
-			lv.Adapter = new ArrayAdapter<string> (this, Android.Resource.Layout.SimpleListItem1, items);
-            //lv.Adapter = ListAdapter;*/
 		}
             
 		protected override void OnResume()
@@ -66,7 +54,7 @@ namespace ScrumHelper.Droid
             return true;
         }
 
-        void SetActiveLayoutProjects()
+        /*void SetActiveLayoutProjects()
         {
             SetContentView (Resource.Layout.Main);
         }
@@ -74,11 +62,11 @@ namespace ScrumHelper.Droid
         void SetActiveLayoutFirstStart()
         {
             SetContentView (Resource.Layout.FirstStart);
-        }
+        }*/
 
         void CreateDefaultData()
         {
-            Project prj = new Project(){Name = "Ваш демо-проект"};
+            Project prj = new Project(){Name = "Ваш первый проект"};
             ScrumHelper.BL.Managers.ProjectManager.SaveProject(prj);
         }
 	}

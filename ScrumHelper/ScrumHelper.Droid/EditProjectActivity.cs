@@ -11,14 +11,20 @@ using Android.Widget;
 
 namespace ScrumHelper.Droid
 {
-    [Activity(Label = "EditProjectActivity")]            
+    [Activity(Label = "EditProject")]            
     public class EditProjectActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            // Create your application here
+            SetContentView(Resource.Layout.EditProject);
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume ();
+
         }
     }
 }
