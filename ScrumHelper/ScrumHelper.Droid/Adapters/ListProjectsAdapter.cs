@@ -22,27 +22,27 @@ namespace ScrumHelper.Droid
             FillListProjects();
         }
 
-        public override int Count 
+        public override int Count
         {
             get { return _projectList.Count; }
         }
 
-        public override Java.Lang.Object GetItem (int position)
+        public override Java.Lang.Object GetItem(int position)
         {
             return null; // could wrap a Contact in a Java.Lang.Object to return it here if needed
         }
 
-        public override long GetItemId (int position)
+        public override long GetItemId(int position)
         {
-            return _projectList [position].ID;
+            return _projectList[position].ID;
         }
 
-        public override View GetView (int position, View convertView, ViewGroup parent)
+        public override View GetView(int position, View convertView, ViewGroup parent)
         {          
-            var view = convertView ?? _activity.LayoutInflater.Inflate (Resource.Layout.Main, parent, false);
+            var view = convertView ?? _activity.LayoutInflater.Inflate(Resource.Layout.Main, parent, false);
             //var contactName = view.FindViewById<TextView> (Resource.Id.ContactName);
             //var contactImage = view.FindViewById<ImageView> (Resource.Id.ContactImage);
-            var projectName = view.FindViewById<ListView> (Resource.Id.listProjects);
+            var projectName = view.FindViewById<ListView>(Resource.Id.listProjectsListView);
             //projectName. = _projectList [position].Name;
 
             /*if (_contactList [position].PhotoId == null) {

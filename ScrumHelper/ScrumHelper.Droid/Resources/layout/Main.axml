@@ -42,7 +42,7 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/listProjects"
+            android:id="@+id/listProjectsListView"
             android:gravity="center_horizontal"
             android:layout_column="0" />
     </TableRow>

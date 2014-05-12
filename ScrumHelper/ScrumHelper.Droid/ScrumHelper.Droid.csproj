@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="Adapters\ListProjectsAdapter.cs" />
     <Compile Include="EditProjectActivity.cs" />
+    <Compile Include="ActionProjectActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -96,6 +97,7 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
     <AndroidResource Include="Resources\layout\EditProject.axml" />
+    <AndroidResource Include="Resources\layout\ActionProject.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

@@ -4,7 +4,7 @@
     android:minHeight="25px"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/tableLayout1"
+    android:id="@+id/EditProjectTabLayout"
     android:stretchColumns="*">
     <TableRow
         android:id="@+id/tableRow1">
@@ -23,7 +23,7 @@
         android:id="@+id/tableRow2">
         <EditText
             android:layout_column="0"
-            android:id="@+id/editText1"
+            android:id="@+id/NameProjectEditText"
             android:hint="Название проекта"
             android:layout_span="2" />
     </TableRow>
@@ -31,20 +31,20 @@
         android:id="@+id/tableRow3">
         <EditText
             android:layout_column="0"
-            android:id="@+id/editText2"
+            android:id="@+id/DescriptionProjectEditText"
             android:hint="Описание проекта"
             android:layout_span="2" />
     </TableRow>
     <TableRow
-        android:id="@+id/tableRow4"
+        android:id="@+id/commandRow"
         android:minWidth="25px"
         android:minHeight="25px">
         <Button
             android:text="Принять"
             android:layout_column="0"
-            android:id="@+id/button1" />
+            android:id="@+id/AcceptButton" />
         <Button
             android:text="Отмена"
-            android:id="@+id/button2" />
+            android:id="@+id/CancelButton" />
     </TableRow>
 </TableLayout>
