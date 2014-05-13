@@ -4,19 +4,18 @@ using ScrumHelper.BL;
 
 namespace ScrumHelper.BL.Managers
 {
-	public static class EmployeeManager
-	{
-		static EmployeeManager ()
-		{
-		}
-		
-		public static Employee GetEmployee(int id)
-		{
-			//return DAL.TaskRepository.GetTask(id);
-			return new Employee ();
-		}
-		
-		/*public static IList<Employee> GetEmployees ()
+    public static class EmployeeManager
+    {
+        static EmployeeManager()
+        {
+        }
+
+        public static Employee Get(int id)
+        {
+            DAL.Repository<Employee> prj = new ScrumHelper.DAL.Repository<Employee>();
+            return prj.GetItem(id);
+        }
+        /*public static IList<Employee> GetEmployees ()
 		{
 			//return new List<Task>(DAL.TaskRepository.GetTasks());
 			return new List<Employee> (new Employee ());
@@ -33,6 +32,5 @@ namespace ScrumHelper.BL.Managers
 			//return DAL.TaskRepository.DeleteTask(id);
 			return 0;
 		}*/
-		
-	}
+    }
 }

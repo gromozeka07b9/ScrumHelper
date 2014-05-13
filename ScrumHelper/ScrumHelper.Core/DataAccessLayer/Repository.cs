@@ -3,82 +3,77 @@ using System.Collections.Generic;
 using System.IO;
 using ScrumHelper.BL;
 
-namespace ScrumHelper.DAL 
+namespace ScrumHelper.DAL
 {
-	public class Repository 
-	{
-		DL.HelperDatabase db = null;
-		protected static string dbLocation;		
-		protected static Repository me;		
+    class Repository<T> where T:BL.Contracts.IBusinessEntity, new()
+    {
+        DL.HelperDatabase db = null;
+        protected string dbLocation;
 
-		static Repository ()
-		{
-			me = new Repository();
-		}
-		
-		protected Repository()
-		{
-			// set the db location
-			dbLocation = DatabaseFilePath;
-			
-			// instantiate the database	
-			db = new ScrumHelper.DL.HelperDatabase(dbLocation);
+        public Repository()
+        {
 
+            // set the db location
+            dbLocation = DatabaseFilePath;
 
-		}
-		
-		public static string DatabaseFilePath 
-		{
-			get 
-			{ 
-				var sqliteFilename = "ScrumHelper.db3";
+            // instantiate the database 
+            db = new ScrumHelper.DL.HelperDatabase(dbLocation);
 
-#if NETFX_CORE
+        }
+
+        public string DatabaseFilePath
+        {
+            get
+            { 
+                var sqliteFilename = "ScrumHelper.db3";
+
+                #if NETFX_CORE
                 var path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, sqliteFilename);
-#else
+                #else
 
-#if SILVERLIGHT
-				// Windows Phone expects a local path, not absolute
-	            var path = sqliteFilename;
-#else
+                #if SILVERLIGHT
+                // Windows Phone expects a local path, not absolute
+                var path = sqliteFilename;
+                #else
 
-#if __ANDROID__
-				// Just use whatever directory SpecialFolder.Personal returns
-	            string libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); ;
-#else
-				// we need to put in /Library/ on iOS5.1 to meet Apple's iCloud terms
-				// (they don't want non-user-generated data in Documents)
-				string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
-				string libraryPath = Path.Combine (documentsPath, "../Library/"); // Library folder
-#endif
-				var path = Path.Combine (libraryPath, sqliteFilename);
-#endif		
+                #if __ANDROID__
+                // Just use whatever directory SpecialFolder.Personal returns
+                string libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                ;
+                #else
+                // we need to put in /Library/ on iOS5.1 to meet Apple's iCloud terms
+                // (they don't want non-user-generated data in Documents)
+                string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
+                string libraryPath = Path.Combine (documentsPath, "../Library/"); // Library folder
+                #endif
+                var path = Path.Combine(libraryPath, sqliteFilename);
+                #endif      
 
-#endif
-				return path;	
-			}
-		}	
+                #endif
+                return path;    
+            }
+        }
 
-		public static Project GetItem(int id)
-		{
-			return me.db.GetItem<Project> (id);
-		}
+        public T GetItem(int id)
+        {
+            return db.GetItem <T>(id);
+        }
 
-		public static IEnumerable<Project> GetProjects ()
-		{
+        public IEnumerable<T> GetItems()
+        {
 
-			return me.db.GetItems<Project>();
-		}
+            return db.GetItems<T>();
+        }
 
-		public static int SaveProject (Project item)
-		{
-			return me.db.SaveItem<Project> (item);
-		}
+        public int Save(T item)
+        {
+            return db.SaveItem<T>(item);
+        }
 
-		public static int DeleteProject(int id)
-		{
-			return me.db.DeleteItem<Project>(id);
-		}
-	}
+        public int Delete(int id)
+        {
+            return db.DeleteItem<T>(id);
+        }
+    }
 }
 

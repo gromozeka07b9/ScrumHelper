@@ -4,30 +4,34 @@ using ScrumHelper.BL;
 
 namespace ScrumHelper.BL.Managers
 {
-	public static class ProjectManager
-	{
-		static ProjectManager ()
-		{
-		}
-		
-		public static Project GetProject(int id)
-		{
-			return DAL.Repository.GetItem(id);
-		}
-		
-		public static IList<Project> GetProjects ()
-		{
-			return new List<Project>(DAL.Repository.GetProjects());
-		}
-		
-		public static int SaveProject (Project item)
-		{
-			return DAL.Repository.SaveProject (item);
-		}
-		
-		public static int DeleteProject(int id)
-		{
-			return DAL.Repository.DeleteProject(id);
-		}		
-	}
+    public static class ProjectManager
+    {
+        static ProjectManager()
+        {
+        }
+
+        public static Project Get(int id)
+        {
+            DAL.Repository<Project> prj = new ScrumHelper.DAL.Repository<Project>();
+            return prj.GetItem(id);
+        }
+
+        public static IList<Project> GetItems()
+        {
+            DAL.Repository<Project> prj = new ScrumHelper.DAL.Repository<Project>();
+            return new List<Project>(prj.GetItems());
+        }
+
+        public static int Save(Project item)
+        {
+            DAL.Repository<Project> prj = new ScrumHelper.DAL.Repository<Project>();
+            return prj.Save(item);
+        }
+
+        public static int Delete(int id)
+        {
+            DAL.Repository<Project> prj = new ScrumHelper.DAL.Repository<Project>();
+            return prj.Delete(id);
+        }
+    }
 }

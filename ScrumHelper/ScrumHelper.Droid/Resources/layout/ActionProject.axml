@@ -18,12 +18,15 @@
         android:text="Начать митинг"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/StartMeetingButton" />
+        android:id="@+id/StartMeetingButton"
+        android:enabled="false" />
     <Button
         android:text="Список митингов"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ViewListMeetingButton" />
+        android:id="@+id/ViewListMeetingButton"
+        android:enabled="false"
+        android:editable="false" />
     <Button
         android:text="Команда проекта"
         android:layout_width="match_parent"
@@ -33,7 +36,8 @@
         android:text="Итерации проекта"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ViewListIterationProjectButton" />
+        android:id="@+id/ViewListIterationProjectButton"
+        android:enabled="false" />
     <Button
         android:text="Вернуться к списку проектов"
         android:layout_width="match_parent"

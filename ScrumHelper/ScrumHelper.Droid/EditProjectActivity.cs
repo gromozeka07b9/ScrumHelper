@@ -29,7 +29,7 @@ namespace ScrumHelper.Droid
                 Project NewItemProject = new Project();
                 NewItemProject.Name = NameProjectEditText.Text;
                 NewItemProject.Description = DescriptionProjectEditText.Text;
-                ScrumHelper.BL.Managers.ProjectManager.SaveProject(NewItemProject);
+                ScrumHelper.BL.Managers.ProjectManager.Save(NewItemProject);
                 Finish();
             };
             CancelButton.Click += delegate

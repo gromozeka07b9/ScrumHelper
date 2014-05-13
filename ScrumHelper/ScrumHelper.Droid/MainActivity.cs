@@ -56,16 +56,18 @@ namespace ScrumHelper.Droid
         void CreateDefaultData()
         {
             Project prj = new Project(){ Name = "Ваш первый проект" };
-            ScrumHelper.BL.Managers.ProjectManager.SaveProject(prj);
+            ScrumHelper.BL.Managers.ProjectManager.Save(prj);
         }
 
         void UpdateListProject()
         {
-            var ExistsProjects = ScrumHelper.BL.Managers.ProjectManager.GetProjects();
+            //CreateDefaultData();
+            //var item = ScrumHelper.BL.Managers.ProjectManager.Get(1);
+            var ExistsProjects = ScrumHelper.BL.Managers.ProjectManager.GetItems();
             if (ExistsProjects.Count < 1)
             {
                 CreateDefaultData();
-                ExistsProjects = ScrumHelper.BL.Managers.ProjectManager.GetProjects();
+                ExistsProjects = ScrumHelper.BL.Managers.ProjectManager.GetItems();
             }
             var ListProjectsStrings = new List<string>();
             foreach (var item in ExistsProjects)
