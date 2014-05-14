@@ -12,38 +12,36 @@ using ScrumHelper.BL;
 
 namespace ScrumHelper.Droid
 {
-    [Activity(Label = "EditProject")]            
-    public class EditProjectActivity : Activity
+    [Activity(Label = "EditEmployee")]            
+    public class EditEmployeeActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView(Resource.Layout.EditProject);
+
+            SetContentView(Resource.Layout.EditEmployee);
 
             Button AcceptButton = FindViewById<Button>(Resource.Id.AcceptButton);
             Button CancelButton = FindViewById<Button>(Resource.Id.CancelButton);
             AcceptButton.Click += delegate
             {
-                EditText NameProjectEditText = FindViewById<EditText>(Resource.Id.NameProjectEditText);
-                EditText DescriptionProjectEditText = FindViewById<EditText>(Resource.Id.DescriptionProjectEditText);
-                Project NewItemProject = new Project();
-                NewItemProject.Name = NameProjectEditText.Text;
-                NewItemProject.Description = DescriptionProjectEditText.Text;
-                ScrumHelper.BL.Managers.ProjectManager.Save(NewItemProject);
+                EditText NameEmployeeEditText = FindViewById<EditText>(Resource.Id.NameEmployeeEditText);
+                EditText EmailEmployeeEditText = FindViewById<EditText>(Resource.Id.EmailEmployeeEditText);
+                Employee NewItemEmployee = new Employee();
+                NewItemEmployee.Name = NameEmployeeEditText.Text;
+                NewItemEmployee.Email = EmailEmployeeEditText.Text;
+                ScrumHelper.BL.Managers.EmployeeManager.Save(NewItemEmployee);
                 Finish();
             };
             CancelButton.Click += delegate
             {
-                //SetContentView (Resource.Layout.EditProject);
-                //StartActivity(typeof(EditProjectActivity));
                 Finish();
-            };                           
+            };
         }
 
         protected override void OnResume()
         {
             base.OnResume();
-
         }
     }
 }

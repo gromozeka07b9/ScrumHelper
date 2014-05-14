@@ -12,26 +12,26 @@ namespace ScrumHelper.BL.Managers
 
         public static Project Get(int id)
         {
-            DAL.Repository<Project> prj = new ScrumHelper.DAL.Repository<Project>();
-            return prj.GetItem(id);
+            DAL.Repository<Project> repos = new ScrumHelper.DAL.Repository<Project>();
+            return repos.GetItem(id);
         }
 
         public static IList<Project> GetItems()
         {
-            DAL.Repository<Project> prj = new ScrumHelper.DAL.Repository<Project>();
-            return new List<Project>(prj.GetItems());
+            DAL.Repository<Project> repos = new ScrumHelper.DAL.Repository<Project>();
+            return new List<Project>(repos.GetItems());
         }
 
         public static int Save(Project item)
         {
-            DAL.Repository<Project> prj = new ScrumHelper.DAL.Repository<Project>();
-            return prj.Save(item);
+            DAL.Repository<Project> repos = new ScrumHelper.DAL.Repository<Project>();
+            return repos.Save(item);
         }
 
         public static int Delete(int id)
         {
-            DAL.Repository<Project> prj = new ScrumHelper.DAL.Repository<Project>();
-            return prj.Delete(id);
+            DAL.Repository<Project> repos = new ScrumHelper.DAL.Repository<Project>();
+            return repos.Delete(id);
         }
     }
 }

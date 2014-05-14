@@ -59,9 +59,6 @@
     <Compile Include="..\ScrumHelper.Core\DataAccessLayer\Repository.cs">
       <Link>DataAccessLayer\Repository.cs</Link>
     </Compile>
-    <Compile Include="..\ScrumHelper.Core\BusinessLayer\Contracts\BusinessEntityBase.cs">
-      <Link>BusinessLayer\Contracts\BusinessEntityBase.cs</Link>
-    </Compile>
     <Compile Include="..\ScrumHelper.Core\BusinessLayer\Contracts\IBusinessEntity.cs">
       <Link>BusinessLayer\Contracts\IBusinessEntity.cs</Link>
     </Compile>
@@ -87,6 +84,10 @@
     <Compile Include="EditProjectActivity.cs" />
     <Compile Include="ActionProjectActivity.cs" />
     <Compile Include="EmployeeProjectActivity.cs" />
+    <Compile Include="EditEmployeeActivity.cs" />
+    <Compile Include="..\ScrumHelper.Core\BusinessLayer\EmployeeRoles.cs">
+      <Link>BusinessLayer\EmployeeRoles.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -100,6 +101,7 @@
     <AndroidResource Include="Resources\layout\EditProject.axml" />
     <AndroidResource Include="Resources\layout\ActionProject.axml" />
     <AndroidResource Include="Resources\layout\EmployeeProject.axml" />
+    <AndroidResource Include="Resources\layout\EditEmployee.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

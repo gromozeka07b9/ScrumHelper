@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/EditEmployeeTabLayout"
+    android:stretchColumns="*">
+    <TableRow
+        android:id="@+id/tableRow1">
+        <TextView
+            android:text="Свойства сотрудника"
+            android:layout_column="0"
+            android:id="@+id/textView10"
+            android:layout_span="2"
+            android:typeface="sans"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="#ff483a3a"
+            android:gravity="center" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/tableRow2">
+        <EditText
+            android:layout_column="0"
+            android:id="@+id/NameEmployeeEditText"
+            android:hint="Имя"
+            android:layout_span="2" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/tableRow3">
+        <EditText
+            android:layout_column="0"
+            android:id="@+id/EmailEmployeeEditText"
+            android:hint="Электронная почта"
+            android:layout_span="2" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/commandRow"
+        android:minWidth="25px"
+        android:minHeight="25px">
+        <Button
+            android:text="Принять"
+            android:layout_column="0"
+            android:id="@+id/AcceptButton" />
+        <Button
+            android:text="Отмена"
+            android:id="@+id/CancelButton" />
+    </TableRow>
+</TableLayout>

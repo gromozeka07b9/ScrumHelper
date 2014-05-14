@@ -1,8 +1,49 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-</LinearLayout>
-
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/mainTabLay"
+    android:stretchColumns="*">
+    <TableRow
+        android:id="@+id/captionRow">
+        <TextView
+            android:text="Команда проекта"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/EmployeeCaptionTextView"
+            android:gravity="center_horizontal"
+            android:typeface="sans"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="#ff483a3a"
+            android:layout_column="0"
+            android:layout_span="2" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/actionRow">
+        <TextView
+            android:text="Члены команды:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/EmployeeActionTextView"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_column="0" />
+        <Button
+            android:text="+"
+            android:id="@+id/addEmployeeButton" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/listRow">
+        <ListView
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listEmployeesListView"
+            android:gravity="center_horizontal"
+            android:layout_column="0" />
+    </TableRow>
+</TableLayout>

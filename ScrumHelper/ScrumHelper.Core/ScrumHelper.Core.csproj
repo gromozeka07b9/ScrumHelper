@@ -54,7 +54,6 @@
   <ItemGroup>
     <Compile Include="DataLayer\SQLite.cs" />
     <Compile Include="DataLayer\HelperDatabase.cs" />
-    <Compile Include="BusinessLayer\Contracts\BusinessEntityBase.cs" />
     <Compile Include="BusinessLayer\Contracts\IBusinessEntity.cs" />
     <Compile Include="BusinessLayer\Project.cs" />
     <Compile Include="BusinessLayer\Employee.cs" />
@@ -63,6 +62,8 @@
     <Compile Include="BusinessLayer\Managers\IterationManager.cs" />
     <Compile Include="BusinessLayer\Managers\EmployeeManager.cs" />
     <Compile Include="DataAccessLayer\Repository.cs" />
+    <Compile Include="BusinessLayer\EmployeeRoles.cs" />
+    <Compile Include="BusinessLayer\Managers\EmployeeRolesManager.cs" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

@@ -5,14 +5,21 @@ using ScrumHelper.BL;
 
 namespace ScrumHelper.DAL
 {
-    class Repository<T> where T:BL.Contracts.IBusinessEntity, new()
+    class SqlLiteInstance
     {
-        DL.HelperDatabase db = null;
-        protected string dbLocation;
-
-        public Repository()
+        public static DL.HelperDatabase DB
         {
+            get
+            {
+                return db;
+            }
+        }
 
+        private static DL.HelperDatabase db = null;
+        protected static string dbLocation;
+
+        static SqlLiteInstance()
+        {
             // set the db location
             dbLocation = DatabaseFilePath;
 
@@ -21,7 +28,7 @@ namespace ScrumHelper.DAL
 
         }
 
-        public string DatabaseFilePath
+        public static string DatabaseFilePath
         {
             get
             { 
@@ -53,26 +60,34 @@ namespace ScrumHelper.DAL
                 return path;    
             }
         }
+    }
+
+    class Repository<T> where T:BL.Contracts.IBusinessEntity, new()
+    {
+        public Repository()
+        {
+        
+        }
 
         public T GetItem(int id)
         {
-            return db.GetItem <T>(id);
+            return SqlLiteInstance.DB.GetItem <T>(id);
         }
 
         public IEnumerable<T> GetItems()
         {
 
-            return db.GetItems<T>();
+            return SqlLiteInstance.DB.GetItems<T>();
         }
 
         public int Save(T item)
         {
-            return db.SaveItem<T>(item);
+            return SqlLiteInstance.DB.SaveItem<T>(item);
         }
 
         public int Delete(int id)
         {
-            return db.DeleteItem<T>(id);
+            return SqlLiteInstance.DB.DeleteItem<T>(id);
         }
     }
 }

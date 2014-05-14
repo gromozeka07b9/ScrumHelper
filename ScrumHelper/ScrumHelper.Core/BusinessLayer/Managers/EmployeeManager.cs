@@ -12,25 +12,26 @@ namespace ScrumHelper.BL.Managers
 
         public static Employee Get(int id)
         {
-            DAL.Repository<Employee> prj = new ScrumHelper.DAL.Repository<Employee>();
-            return prj.GetItem(id);
+            DAL.Repository<Employee> repos = new ScrumHelper.DAL.Repository<Employee>();
+            return repos.GetItem(id);
         }
-        /*public static IList<Employee> GetEmployees ()
-		{
-			//return new List<Task>(DAL.TaskRepository.GetTasks());
-			return new List<Employee> (new Employee ());
-		}
-		
-		public static int SaveEmployee (Employee item)
-		{
-			//return DAL.TaskRepository.SaveTask(item);
-			return 0;
-		}
-		
-		public static int DeleteEmployee(int id)
-		{
-			//return DAL.TaskRepository.DeleteTask(id);
-			return 0;
-		}*/
+
+        public static IList<Employee> GetItems()
+        {
+            DAL.Repository<Employee> repos = new ScrumHelper.DAL.Repository<Employee>();
+            return new List<Employee>(repos.GetItems());
+        }
+
+        public static int Save(Employee item)
+        {
+            DAL.Repository<Employee> repos = new ScrumHelper.DAL.Repository<Employee>();
+            return repos.Save(item);
+        }
+
+        public static int Delete(int id)
+        {
+            DAL.Repository<Employee> repos = new ScrumHelper.DAL.Repository<Employee>();
+            return repos.Delete(id);
+        }
     }
 }

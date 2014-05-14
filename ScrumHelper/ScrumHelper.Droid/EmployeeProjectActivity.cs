@@ -8,6 +8,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using ScrumHelper.BL;
 
 namespace ScrumHelper.Droid
 {
@@ -19,26 +20,42 @@ namespace ScrumHelper.Droid
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.EmployeeProject);
-
+            Button addEmployeeButton = FindViewById<Button>(Resource.Id.addEmployeeButton);
+            addEmployeeButton.Click += delegate
+            {             
+                StartActivity(typeof(EditEmployeeActivity));
+            };
+            ListView listEmployeeListView = FindViewById<ListView>(Resource.Id.listEmployeesListView);
+            listEmployeeListView.ItemClick += delegate
+            {
+                //SetContentView (Resource.Layout.EditProject);
+                StartActivity(typeof(EditEmployeeActivity));
+            };
             UpdateListEmployee();
+        }
+
+        void CreateDefaultData()
+        {
+            Employee itemEmp = new Employee(){ Name = "Ваш первый сотрудник", Email = "test@test.com" };
+            ScrumHelper.BL.Managers.EmployeeManager.Save(itemEmp);
         }
 
         void UpdateListEmployee()
         {
-            //var ExistsPersons = ScrumHelper.BL.Managers.EmployeeManager.GetEmployee;
-            /*if (ExistsProjects.Count < 1)
+            var ExistsEmployees = ScrumHelper.BL.Managers.EmployeeManager.GetItems();
+            if (ExistsEmployees.Count < 1)
             {
                 CreateDefaultData();
-                ExistsProjects = ScrumHelper.BL.Managers.ProjectManager.GetProjects();
+                ExistsEmployees = ScrumHelper.BL.Managers.EmployeeManager.GetItems();
             }
-            var ListProjectsStrings = new List<string>();
-            foreach (var item in ExistsProjects)
+            var ListEmployeeStrings = new List<string>();
+            foreach (var item in ExistsEmployees)
             {
-                ListProjectsStrings.Add(item.Name);
+                ListEmployeeStrings.Add(item.Name);
             }
-            ListView lv = FindViewById<ListView>(Resource.Id.listProjectsListView);
-            lv.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, ListProjectsStrings.ToArray());
-*/
+            ListView lv = FindViewById<ListView>(Resource.Id.listEmployeesListView);
+            lv.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, ListEmployeeStrings.ToArray());
+
         }
     }
 }
