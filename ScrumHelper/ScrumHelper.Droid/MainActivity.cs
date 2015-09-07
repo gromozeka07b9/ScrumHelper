@@ -13,25 +13,28 @@ namespace ScrumHelper.Droid
     [Activity(Label = "ScrumHelper", MainLauncher = true)]
     public class MainActivity : Activity
     {
-        //int count = 1;
-        protected override void OnCreate(Bundle bundle)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(bundle);
+            base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Main);
+            SetClickEvents();
+
+            UpdateListProject();
+        }
+
+        void SetClickEvents()
+        {
             Button editProjectButton = FindViewById<Button>(Resource.Id.editProjectButton);
             editProjectButton.Click += delegate
             {
-                //SetContentView (Resource.Layout.EditProject);
                 StartActivity(typeof(EditProjectActivity));
             };
             ListView listProjectsListView = FindViewById<ListView>(Resource.Id.listProjectsListView);
             listProjectsListView.ItemClick += delegate
             {
-                //SetContentView (Resource.Layout.EditProject);
                 StartActivity(typeof(ActionProjectActivity));
             };
-            UpdateListProject();
         }
 
         protected override void OnResume()
@@ -44,25 +47,19 @@ namespace ScrumHelper.Droid
         {
             return true;
         }
-        /*void SetActiveLayoutProjects()
-        {
-            SetContentView (Resource.Layout.Main);
-        }
 
-        void SetActiveLayoutFirstStart()
-        {
-            SetContentView (Resource.Layout.FirstStart);
-        }*/
         void CreateDefaultData()
         {
-            Project prj = new Project(){ Name = "Ваш первый проект" };
-            ScrumHelper.BL.Managers.ProjectManager.Save(prj);
+            Project prj = new Project { Name = "Ваш первый проект" };
+            int result = ScrumHelper.BL.Managers.ProjectManager.Save(prj);
+            if (result != 0)
+            {
+                //ошибка
+            }
         }
 
         void UpdateListProject()
         {
-            //CreateDefaultData();
-            //var item = ScrumHelper.BL.Managers.ProjectManager.Get(1);
             var ExistsProjects = ScrumHelper.BL.Managers.ProjectManager.GetItems();
             if (ExistsProjects.Count < 1)
             {
