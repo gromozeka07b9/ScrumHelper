@@ -1,12 +1,13 @@
-﻿<Properties StartupItem="ScrumHelper.Droid/ScrumHelper.Droid.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.nexus7" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ScrumHelper.Droid/Adapters/ListProjectsAdapter.cs">
+﻿<Properties StartupItem="ScrumHelper.Droid\ScrumHelper.Droid.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.SDK19" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\Program Files (x86)\MSBuild\Xamarin\Android\Xamarin.Android.Common.targets">
     <Files>
-      <File FileName="ScrumHelper.Droid/EditEmployeeActivity.cs" Line="18" Column="56" />
-      <File FileName="ScrumHelper.Droid/ActionProjectActivity.cs" Line="1" Column="1" />
-      <File FileName="ScrumHelper.Core/BusinessLayer/Managers/ProjectManager.cs" Line="1" Column="1" />
-      <File FileName="ScrumHelper.Droid/Adapters/ListProjectsAdapter.cs" Line="1" Column="1" />
-      <File FileName="ScrumHelper.Droid/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="ScrumHelper.Droid\EditEmployeeActivity.cs" Line="18" Column="56" />
+      <File FileName="ScrumHelper.Droid\ActionProjectActivity.cs" Line="1" Column="1" />
+      <File FileName="ScrumHelper.Core\BusinessLayer\Managers\ProjectManager.cs" Line="1" Column="1" />
+      <File FileName="ScrumHelper.Droid\Adapters\ListProjectsAdapter.cs" Line="32" Column="59" />
+      <File FileName="ScrumHelper.Droid\MainActivity.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\Program Files (x86)\MSBuild\Xamarin\Android\Xamarin.Android.Common.targets" Line="1899" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
